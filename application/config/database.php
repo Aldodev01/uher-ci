@@ -73,24 +73,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
-$db['default'] = array(
-    'dsn'   => '',
-    'hostname' => 'localhost',
-    'username' => 'root',  // Username default untuk MAMP adalah 'root'
-    'password' => 'root',  // Password default untuk MAMP adalah 'root'. Jika kosong, gunakan ''
-    'database' => 'uher_19200613', // Nama database Anda
-    'dbdriver' => 'mysqli',
-    'dbprefix' => '',
-    'pconnect' => FALSE,
-    'db_debug' => (ENVIRONMENT !== 'production'),
-    'cache_on' => FALSE,
-    'cachedir' => '',
-    'char_set' => 'utf8',
-    'dbcollat' => 'utf8_general_ci',
-    'swap_pre' => '',
-    'encrypt' => FALSE,
-    'compress' => FALSE,
-    'stricton' => FALSE,
-    'failover' => array(),
-    'save_queries' => TRUE
+$db['default'] = array( 
+    'dsn'   => '',  // Data Source Name, dikosongkan jika tidak digunakan
+    'hostname' => 'localhost',  // Hostname database, biasanya 'localhost'
+    'username' => 'root',  // Username database, default MAMP adalah 'root'
+    'password' => 'root',  // Password database, default MAMP adalah 'root', bisa dikosongkan jika tidak ada
+    'database' => 'uher_19200613', // Nama database yang digunakan
+    'dbdriver' => 'mysqli',  // Driver database yang digunakan, di sini menggunakan MySQLi
+    'dbprefix' => '',  // Prefix untuk tabel, dikosongkan jika tidak ada
+    'pconnect' => FALSE,  // Tidak menggunakan persistent connection (koneksi yang tetap terbuka)
+    'db_debug' => (ENVIRONMENT !== 'production'),  // Mengaktifkan debug mode jika bukan di lingkungan produksi
+    'cache_on' => FALSE,  // Tidak menggunakan cache query
+    'cachedir' => '',  // Direktori untuk menyimpan cache, dikosongkan jika tidak digunakan
+    'char_set' => 'utf8',  // Set karakter yang digunakan, di sini menggunakan UTF-8
+    'dbcollat' => 'utf8_general_ci',  // Set collation yang digunakan, di sini menggunakan UTF-8 General CI
+    'swap_pre' => '',  // Prefix pengganti untuk tabel, dikosongkan jika tidak digunakan
+    'encrypt' => FALSE,  // Tidak menggunakan enkripsi pada koneksi database
+    'compress' => FALSE,  // Tidak menggunakan kompresi pada koneksi database
+    'stricton' => FALSE,  // Tidak menggunakan mode SQL strict
+    'failover' => array(),  // Array untuk konfigurasi failover server database, kosong jika tidak ada
+    'save_queries' => TRUE  // Menyimpan query yang telah dieksekusi untuk debugging
 );

@@ -33,18 +33,32 @@
         }
     </style>
 </head>
-<body>
-    <div class="login-box">
-        <?php if (isset($error_message)) : ?>
-            <div class="alert"><?php echo $error_message; ?></div>
-        <?php endif; ?>
-        <h2>Form Login</h2>
-        <form action="<?php echo site_url('login/validate'); ?>" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-            <button type="button" onclick="location.href='<?php echo site_url('login'); ?>'">Cancel</button>
-        </form>
-    </div>
-</body>
+	<body>
+		<div class="login-box">
+			<?php if (isset($error_message)) : ?> 
+				<!-- Jika variabel $error_message di-set, tampilkan pesan error -->
+				<div class="alert"><?php echo $error_message; ?></div>
+				<!-- Menampilkan pesan error -->
+			<?php endif; ?>
+
+			<h2>Form Login</h2> 
+			<!-- Judul form login -->
+
+			<form action="<?php echo site_url('login/validate'); ?>" method="POST">
+				<!-- Form login yang akan mengirim data ke URL 'login/validate' dengan metode POST -->
+
+				<input type="text" name="username" placeholder="Username" required>
+				<!-- Input untuk username dengan placeholder 'Username', wajib diisi -->
+
+				<input type="password" name="password" placeholder="Password" required>
+				<!-- Input untuk password dengan placeholder 'Password', wajib diisi -->
+
+				<button type="submit">Login</button>
+				<!-- Tombol submit untuk mengirim form login -->
+
+				<button type="button" onclick="location.href='<?php echo site_url('login'); ?>'">Cancel</button>
+				<!-- Tombol cancel untuk membatalkan dan kembali ke halaman login -->
+			</form>
+		</div>
+	</body>
 </html>
